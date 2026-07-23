@@ -78,6 +78,10 @@
       <label>Show application name labels under icons in the grid</label>
       <default>true</default>
     </entry>
+    <entry name="roundedAppIcons" type="Bool">
+      <label>Use rounded corners on application icons</label>
+      <default>true</default>
+    </entry>
     <entry name="extraRunners" type="StringList">
       <label>The plugin id's of additional KRunner plugins to use. Only used if useExtraRunners is true.</label>
       <default>shell,bookmarks,baloosearch</default>
