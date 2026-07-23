@@ -329,11 +329,6 @@ KCM.SimpleKCM {
       checked: Plasmoid.configuration.showAppLabels
     }
     CheckBox {
-      id: roundedAppIconsCheck
-      Kirigami.FormData.label: i18n("App Icons:")
-      text: i18n("Rounded corners")
-      checked: Plasmoid.configuration.roundedAppIcons
-    }
     CheckBox {
       id: useSystemFontSettings
       Kirigami.FormData.label: i18n("Use system font settings")

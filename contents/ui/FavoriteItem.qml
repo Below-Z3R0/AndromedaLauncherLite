@@ -94,29 +94,13 @@ Item {
     });
   }
 
-  Item {
+ Kirigami.Icon {
     id: appicon
     y: plasmoid.configuration.showAppLabels ? (2 * highlightItemSvg.margins.top) : (parent.height - height) / 2
     anchors.horizontalCenter: parent.horizontalCenter
     width: root.iconSize
     height: width
-
-    layer.enabled: plasmoid.configuration.roundedAppIcons
-    layer.effect: OpacityMask {
-      maskSource: Rectangle {
-        width: appicon.width
-        height: appicon.height
-        radius: 8
-      }
-    }
-
-    Kirigami.Icon {
-      anchors.centerIn: parent
-      width: parent.width
-      height: parent.height
-      source: model.decoration
-      smooth: true
-    }
+    source: model.decoration
   }
 
   PlasmaComponents.Label {
