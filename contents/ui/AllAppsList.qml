@@ -54,6 +54,8 @@ RowLayout {
     for (var i = 2; i < rootModel.count; i++) {
       categoryName  = rootModel.data(rootModel.index(i, 0), Qt.DisplayRole);
       categoryIcon  = rootModel.data(rootModel.index(i, 0), Qt.DecorationRole);
+      if (!categoryName || categoryName === "") continue;
+      if (categoryName === "All Applications") categoryName = i18n("All Apps");
       categories.push({
         name: categoryName,
         index: i,
