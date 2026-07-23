@@ -147,7 +147,7 @@ Item {
         if(showAllApps) {
           var appList = stack.currentItem
           var currentCategory = appList.getCurrentCategory();
-          mainLabelGrid.text = currentCategory.name;
+          mainLabelGrid.text = i18n("Categories");
           sortingImage.source = currentCategory.icon;
           appList.updateShowedModel(currentCategory.index);
         } else {
