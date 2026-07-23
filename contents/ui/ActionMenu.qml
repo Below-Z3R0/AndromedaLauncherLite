@@ -7,17 +7,17 @@
 
 import QtQuick 2.15
 
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.extras as PlasmaExtras
 
 Item {
     id: root
 
     property QtObject menu
     property Item visualParent
-    property variant actionList
+    17|    property var actionList
     property bool opened: menu ? (menu.status !== PlasmaExtras.Menu.Closed) : false
 
-    signal actionClicked(string actionId, variant actionArgument)
+    20|    signal actionClicked(string actionId, var actionArgument)
     signal closed
 
     onActionListChanged: refreshMenu();
@@ -89,7 +89,7 @@ Item {
         PlasmaExtras.MenuItem {
             id: submenuItem
 
-            property variant actionItem
+            property var actionItem
 
             text: actionItem.text ? actionItem.text : ""
             icon: actionItem.icon ? actionItem.icon : null
@@ -104,7 +104,7 @@ Item {
         id: contextMenuItemComponent
 
         PlasmaExtras.MenuItem {
-            property variant actionItem
+            property var actionItem
 
             text      : actionItem.text ? actionItem.text : ""
             enabled   : actionItem.type !== "title" && ("enabled" in actionItem ? actionItem.enabled : true)

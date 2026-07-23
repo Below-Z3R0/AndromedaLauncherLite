@@ -1,5 +1,5 @@
-import QtQuick 2.12
-import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick
+import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import org.kde.kcmutils as KCM

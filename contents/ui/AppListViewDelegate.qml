@@ -18,15 +18,11 @@
  ****************************************************************************/
 import QtQuick 2.12
 import QtQuick.Layouts 1.12
-import Qt5Compat.GraphicalEffects
-import QtQuick.Window 2.2
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.coreaddons 1.0 as KCoreAddons
+import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami 2.13 as Kirigami
 import QtQuick.Controls 2.15
-import QtQuick.Templates as T
 import org.kde.plasma.plasmoid
 
 import "../code/tools.js" as Tools
@@ -48,7 +44,7 @@ T.ItemDelegate {
 
   property bool isDraging: false
 
-  signal aboutToShowActionMenu(variant actionMenu)
+  51|  signal aboutToShowActionMenu(var actionMenu)
 
   property bool hasActionList: ((model.favoriteId !== null)
       || (("hasActionList" in model) && (model.hasActionList !== null)))

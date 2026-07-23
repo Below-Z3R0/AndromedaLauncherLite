@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import org.kde.kirigami as Kirigami
 
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.plasmoid
 
 Rectangle {
 
