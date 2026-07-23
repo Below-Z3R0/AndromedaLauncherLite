@@ -96,7 +96,7 @@ Item {
 
  Kirigami.Icon {
     id: appicon
-    y: (2 * highlightItemSvg.margins.top) 
+    y: plasmoid.configuration.showAppLabels ? (2 * highlightItemSvg.margins.top) : (parent.height - height) / 2
     anchors.horizontalCenter: parent.horizontalCenter
     width: root.iconSize
     height: width
@@ -105,6 +105,7 @@ Item {
 
   PlasmaComponents.Label {
     id: appname
+    visible: plasmoid.configuration.showAppLabels
     text: ("name" in model ? model.name : model.display)
     font.family: main.textFont
     font.pointSize: main.textSize
@@ -152,7 +153,7 @@ Item {
 
   DropShadow {
     id: appNameGlow
-    visible: plasmoid.configuration.enableGlow
+    visible: plasmoid.configuration.enableGlow && plasmoid.configuration.showAppLabels
     anchors.fill: appname
     cached: true
     horizontalOffset: 0

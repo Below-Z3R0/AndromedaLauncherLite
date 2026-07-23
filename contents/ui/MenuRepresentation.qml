@@ -52,7 +52,7 @@ PlasmaCore.Dialog {
     }
 
     property int cellSizeHeight: iconSize
-                                     + Kirigami.Units.gridUnit * 2
+                                     + (Plasmoid.configuration.showAppLabels ? Kirigami.Units.gridUnit * 2 : 0)
                                      + (2 * Math.max(highlightItemSvg.margins.top + highlightItemSvg.margins.bottom,
                                                      highlightItemSvg.margins.left + highlightItemSvg.margins.right))
     property int cellSizeWidth: cellSizeHeight //+ Kirigami.Units.gridUnit

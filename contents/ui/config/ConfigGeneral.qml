@@ -59,6 +59,7 @@ KCM.SimpleKCM {
     property alias cfg_glowColor: glowColor.currentIndex
 
     property alias cfg_useSystemFontSettings: useSystemFontSettings.checked
+    property alias cfg_showAppLabels: showAppLabelsCheck.checked
 
   Kirigami.FormLayout {
 
@@ -321,6 +322,12 @@ KCM.SimpleKCM {
       Kirigami.FormData.isSection: true
     }
 
+    CheckBox {
+      id: showAppLabelsCheck
+      Kirigami.FormData.label: i18n("App Labels:")
+      text: i18n("Show application names")
+      checked: Plasmoid.configuration.showAppLabels
+    }
     CheckBox {
       id: useSystemFontSettings
       Kirigami.FormData.label: i18n("Use system font settings")
