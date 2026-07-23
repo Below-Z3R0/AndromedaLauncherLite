@@ -57,6 +57,7 @@ ListView {
   // and eats up/down key events when at the beginning or end of the list.
   keyNavigationEnabled: false
   keyNavigationWraps: false
+  reuseItems: true
   // This is actually needed. The highlight will animate from thin to wide otherwise.
   highlightResizeDuration: 0
   highlightMoveDuration: 50

@@ -145,8 +145,8 @@ Item {
       },
       State {
         name: "default"; when: (!focus)
-        PropertyChanges { target: appIconGlow; opacity: 0}
-        PropertyChanges { target: appNameGlow; opacity: 0}
+        PropertyChanges { target: appIconGlow; visible: false}
+        PropertyChanges { target: appNameGlow; visible: false}
       }
     ]
     transitions: highlight

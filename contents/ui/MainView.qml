@@ -83,6 +83,7 @@ Item {
     height: isTop ? main.height - y - Kirigami.Units.largeSpacing : main.height - y //- (searchBarContainer.height + 20)
     color: bgColor
     opacity: 0
+    visible: opacity > 0
   }
   //Floating Avatar
   Item {
@@ -239,7 +240,7 @@ Item {
           Item {
             visible: plasmoid.configuration.enableGlow && !searching
             anchors.fill: bgMask
-            layer.enabled: true
+            layer.enabled: plasmoid.configuration.enableGlow && !searching
             layer.effect: OpacityMask { maskSource: bgMask }
 
             LinearGradient {
@@ -257,7 +258,7 @@ Item {
         //All apps button shadow
         DropShadow {
             anchors.fill: btnBg
-            cached: true
+            cached: plasmoid.configuration.enableGlow && !searching
             horizontalOffset: 0
             verticalOffset: 0
             radius: 11.0

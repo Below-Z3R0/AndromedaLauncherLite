@@ -15,7 +15,7 @@ Item {
     // Text shadow for greeting label
     DropShadow {
         anchors.fill: nameLabel
-        cached: true
+        cached: plasmoid.configuration.enableGlow
         horizontalOffset: 0
         verticalOffset: 0
         radius: 10.0

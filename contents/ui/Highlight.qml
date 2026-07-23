@@ -49,7 +49,7 @@ Rectangle {
     clip: true
 
     // apply rounded corners mask
-    layer.enabled: true
+    layer.enabled: highlight.radius > 0
     layer.effect: OpacityMask {
         maskSource: Rectangle {
             x: highlight.x; y: highlight.y
@@ -67,7 +67,7 @@ Rectangle {
         height: highlight.height + highlight.radius
         anchors.centerIn: parent
 
-        opacity: highlight.hideBg ? 0 : 1
+        visible: !highlight.hideBg
 
         imagePath: "widgets/viewitem"
         prefix: {

@@ -45,7 +45,7 @@ RowLayout {
 
   property alias viewItem: appViewLoader.item
 
-  property var appsCategoriesList: { 
+  readonly property var appsCategoriesList: { 
 
     var categories = [];
     var categoryName;
@@ -62,7 +62,6 @@ RowLayout {
         icon: categoryIcon
       });
     }
-    allApps.allAppsModel =  rootModel.modelForRow(2)
     return categories;
   }
 
