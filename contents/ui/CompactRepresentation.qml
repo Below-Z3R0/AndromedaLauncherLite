@@ -95,7 +95,7 @@ Item {
     }
 
     Component.onCompleted: {
-        dashWindow = Qt.createQmlObject("MenuRepresentation {}", root);
+        dashWindow = Qt.createQmlObject("MenuRepresentation { visible: false }", root);
         plasmoid.activated.connect(function() {
             dashWindow.visible = !dashWindow.visible;
         });
