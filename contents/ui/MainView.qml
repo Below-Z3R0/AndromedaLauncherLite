@@ -84,7 +84,18 @@ Item {
     color: bgColor
     opacity: 0
   }
-
+  //Floating Avatar
+  Item {
+    id: avatarParent
+    x: main.width / 2
+    y: - root.margins.top
+    FloatingAvatar {
+      id: floatingAvatar
+      isTop: main.isTop
+      avatarWidth: 110
+      visible: root.visible && !isTop ? true : root.visible && plasmoid.configuration.floating ? true : false
+    }
+  }
   //Power & Settings
   RowLayout {
     id: headerBar
@@ -94,7 +105,7 @@ Item {
       UserAvatar {
         width: 80
         height: width
-        visible: isTop && !plasmoid.configuration.floating
+        visible: !floatingAvatar.visible
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.horizontalCenterOffset: width / 2
       }
