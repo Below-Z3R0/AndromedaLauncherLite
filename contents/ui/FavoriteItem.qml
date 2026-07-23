@@ -112,7 +112,9 @@ Item {
 
     Kirigami.Icon {
       id: appicon_raw
-      anchors.fill: parent
+      anchors.centerIn: parent
+      width: parent.width
+      height: parent.height
       source: model.decoration
     }
   }
