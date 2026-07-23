@@ -198,7 +198,7 @@ Item {
       // Show all app buttons
       PlasmaComponents.Button  {
         id: allAppsButton
-        text: showAllApps ? i18n("Back") : i18n("All apps")
+        text: showAllApps ? i18n("Back") : i18n("Categories")
         flat: false
         
         topPadding: 6
