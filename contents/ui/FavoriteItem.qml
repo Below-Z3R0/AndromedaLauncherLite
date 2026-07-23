@@ -40,8 +40,8 @@ Item {
   height: root.cellSizeHeight
 
   signal itemActivated(int index, string actionId, string argument)
-  45|  signal actionTriggered(string actionId, var actionArgument)
-  46|  signal aboutToShowActionMenu(var actionMenu)
+  signal actionTriggered(string actionId, var actionArgument)
+  signal aboutToShowActionMenu(var actionMenu)
 
   property bool isDraging: false
 

@@ -41,7 +41,7 @@ Item {
   property int subIndex: 0
 
   signal highlightChanged
-  47|  signal aboutToShowActionMenu(var actionMenu)
+  signal aboutToShowActionMenu(var actionMenu)
 
   property bool hasActionList: ((model.favoriteId !== null)
       || (("hasActionList" in model) && (model.hasActionList !== null)))

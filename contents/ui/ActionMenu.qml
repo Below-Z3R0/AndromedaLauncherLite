@@ -14,10 +14,10 @@ Item {
 
     property QtObject menu
     property Item visualParent
-    17|    property var actionList
+    property var actionList
     property bool opened: menu ? (menu.status !== PlasmaExtras.Menu.Closed) : false
 
-    20|    signal actionClicked(string actionId, var actionArgument)
+    signal actionClicked(string actionId, var actionArgument)
     signal closed
 
     onActionListChanged: refreshMenu();

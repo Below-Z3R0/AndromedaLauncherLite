@@ -44,7 +44,7 @@ T.ItemDelegate {
 
   property bool isDraging: false
 
-  51|  signal aboutToShowActionMenu(var actionMenu)
+  signal aboutToShowActionMenu(var actionMenu)
 
   property bool hasActionList: ((model.favoriteId !== null)
       || (("hasActionList" in model) && (model.hasActionList !== null)))
