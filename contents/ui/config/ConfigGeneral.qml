@@ -29,7 +29,7 @@ import org.kde.draganddrop 2.0 as DragDrop
 import org.kde.kirigami 2.3 as Kirigami
 
 import org.kde.ksvg as KSvg
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.plasmoid
 import org.kde.kcmutils as KCM
 
 import org.kde.iconthemes as KIconThemes
