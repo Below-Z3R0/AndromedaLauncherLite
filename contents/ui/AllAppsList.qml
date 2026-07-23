@@ -30,8 +30,10 @@ import org.kde.kirigami as Kirigami
 import org.kde.draganddrop 2.0
 
 
-Item {
+RowLayout {
   id: allApps
+
+  spacing: 0
 
   property QtObject allAppsModel: rootModel.modelForRow(2)
 
@@ -104,11 +106,75 @@ Item {
       }
   }
 
+  // ── SIDEBAR: Category list ──
+  ListView {
+    id: categorySidebar
+    visible: appsCategoriesList.length > 0
+    Layout.preferredWidth: 130
+    Layout.fillHeight: true
+    clip: true
+    model: appsCategoriesList
+
+    delegate: Item {
+      width: ListView.view.width
+      height: 36
+
+      Rectangle {
+        anchors.fill: parent
+        color: (allApps.currentStateIndex === index) ? main.contrastBgColor : "transparent"
+        radius: 6
+        anchors.margins: 2
+      }
+
+      RowLayout {
+        anchors.fill: parent
+        anchors.leftMargin: 8
+        anchors.rightMargin: 8
+        spacing: 6
+
+        Kirigami.Icon {
+          source: modelData.icon
+          Layout.preferredWidth: 16
+          Layout.preferredHeight: 16
+          isMask: true
+          color: main.textColor
+        }
+
+        PlasmaComponents.Label {
+          text: modelData.name
+          font.family: main.textFont
+          font.pointSize: main.textSize
+          color: main.textColor
+          elide: Text.ElideRight
+          Layout.fillWidth: true
+        }
+      }
+
+      MouseArea {
+        anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
+        hoverEnabled: true
+        onClicked: {
+          allApps.currentStateIndex = index;
+          allApps.updateShowedModel(modelData.index);
+        }
+      }
+    }
+  }
+
+  // ── SEPARATOR ──
+  Rectangle {
+    visible: appsCategoriesList.length > 0
+    Layout.preferredWidth: 1
+    Layout.fillHeight: true
+    color: main.contrastBgColor
+  }
+
+  // ── CONTENT: App grid/list ──
   Loader {
     id: appViewLoader
-    // Explicitly set the size of the
-    // Loader to the parent item's size
-    anchors.fill: parent
+    Layout.fillWidth: true
+    Layout.fillHeight: true
     sourceComponent: preferredAppsViewComponent
     active: true
   }
