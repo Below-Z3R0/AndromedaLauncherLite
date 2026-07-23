@@ -185,7 +185,7 @@ Item {
           hoverEnabled: true
           enabled: showAllApps && !searching
           acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
-          onClicked: {
+          onClicked: mouse => {
             var appList = stack.currentItem;
             if (mouse.button == Qt.LeftButton) { appList.incrementCurrentStateIndex() }
             else if (mouse.button == Qt.RightButton) { appList.decrementCurrentStateIndex() }
@@ -207,8 +207,6 @@ Item {
         rightPadding: 10
 
       //  icon.name: showAllApps ? "go-previous" : "go-next"
-        icon.height: 15
-        icon.width: icon.height
 
         font.pointSize: textSize
         font.family: textFont
