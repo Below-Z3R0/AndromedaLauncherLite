@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 Item {
     property var textSize
@@ -13,15 +13,14 @@ Item {
         font.bold: true
     }
     // Text shadow for greeting label
-    DropShadow {
+    MultiEffect {
         anchors.fill: nameLabel
-        cached: plasmoid.configuration.enableGlow
-        horizontalOffset: 0
-        verticalOffset: 0
-        radius: 10.0
-        samples: 16
-        color: glowColor1
+        enabled: plasmoid.configuration.enableGlow
+        shadowEnabled: plasmoid.configuration.enableGlow
+        shadowColor: glowColor1
+        shadowVerticalOffset: 0
+        shadowHorizontalOffset: 0
+        shadowBlur: 1.25
         source: nameLabel
-        visible: plasmoid.configuration.enableGlow
     }
 }

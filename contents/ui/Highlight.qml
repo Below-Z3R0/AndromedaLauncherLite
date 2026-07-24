@@ -1,7 +1,7 @@
 import QtQuick
 import org.kde.ksvg as KSvg
 import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 
 Rectangle {
@@ -50,7 +50,8 @@ Rectangle {
 
     // apply rounded corners mask
     layer.enabled: highlight.radius > 0
-    layer.effect: OpacityMask {
+    layer.effect: MultiEffect {
+        maskEnabled: true
         maskSource: Rectangle {
             x: highlight.x; y: highlight.y
             width: highlight.width

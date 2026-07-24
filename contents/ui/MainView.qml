@@ -18,7 +18,7 @@
  ****************************************************************************/
 import QtQuick 2.15
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.coreaddons 1.0 as KCoreAddons
@@ -241,31 +241,33 @@ Item {
             visible: plasmoid.configuration.enableGlow && !searching
             anchors.fill: bgMask
             layer.enabled: plasmoid.configuration.enableGlow && !searching
-            layer.effect: OpacityMask { maskSource: bgMask }
+            layer.effect: MultiEffect {
+                maskEnabled: true
+                maskSource: bgMask
+            }
+          }
 
-            LinearGradient {
-              anchors.fill: parent
-              start: Qt.point(bgMask.width, 0)
-              end: Qt.point(0, bgMask.height)
+          Rectangle {
+              anchors.fill: bgMask
+              visible: plasmoid.configuration.enableGlow && !searching
+              radius: 12
               gradient: Gradient {
                   GradientStop { position: 0.0; color: glowColor1 }
                   GradientStop { position: 1.0; color: glowColor2 }
               }
-            }
           }
         }
 
         //All apps button shadow
-        DropShadow {
+        MultiEffect {
             anchors.fill: btnBg
-            cached: plasmoid.configuration.enableGlow && !searching
-            horizontalOffset: 0
-            verticalOffset: 0
-            radius: 11.0
-            samples: 16
-            color: glowColor1
+            enabled: plasmoid.configuration.enableGlow && !searching
+            shadowEnabled: plasmoid.configuration.enableGlow && !searching
+            shadowColor: glowColor1
+            shadowVerticalOffset: 0
+            shadowHorizontalOffset: 0
+            shadowBlur: 1.375
             source: btnBg
-            visible: plasmoid.configuration.enableGlow && !searching
         }
       }
 

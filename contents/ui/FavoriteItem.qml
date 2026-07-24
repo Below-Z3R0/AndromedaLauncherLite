@@ -18,7 +18,7 @@
  ****************************************************************************/
 import QtQuick
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.plasmoid
@@ -125,16 +125,15 @@ Item {
     wrapMode: Text.Wrap
   }
 
-  DropShadow {
+  MultiEffect {
     id:appIconGlow
-    visible: plasmoid.configuration.enableGlow
+    enabled: plasmoid.configuration.enableGlow
     anchors.fill: appicon
-    cached: true
-    horizontalOffset: 0
-    verticalOffset: 0
-    radius: 15.0
-    samples: 16
-    color: main.glowColor1
+    shadowEnabled: plasmoid.configuration.enableGlow
+    shadowColor: main.glowColor1
+    shadowVerticalOffset: 0
+    shadowHorizontalOffset: 0
+    shadowBlur: 1.875
     source: appicon
     states: [
       State {
@@ -151,16 +150,15 @@ Item {
     transitions: highlight
   }
 
-  DropShadow {
+  MultiEffect {
     id: appNameGlow
-    visible: plasmoid.configuration.enableGlow && plasmoid.configuration.showAppLabels
+    enabled: plasmoid.configuration.enableGlow && plasmoid.configuration.showAppLabels
     anchors.fill: appname
-    cached: true
-    horizontalOffset: 0
-    verticalOffset: 0
-    radius: 15.0
-    samples: 16
-    color: main.glowColor1
+    shadowEnabled: plasmoid.configuration.enableGlow && plasmoid.configuration.showAppLabels
+    shadowColor: main.glowColor1
+    shadowVerticalOffset: 0
+    shadowHorizontalOffset: 0
+    shadowBlur: 1.875
     source: appname
   }
   
