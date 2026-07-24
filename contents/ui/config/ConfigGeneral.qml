@@ -329,7 +329,6 @@ KCM.SimpleKCM {
       checked: Plasmoid.configuration.showAppLabels
     }
     CheckBox {
-    CheckBox {
       id: useSystemFontSettings
       Kirigami.FormData.label: i18n("Use system font settings")
       text: i18n("Enabled")
