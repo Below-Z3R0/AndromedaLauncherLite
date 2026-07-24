@@ -3,13 +3,12 @@
 	"KPlugin": {
 		"Authors": [
 			{
-				"Email": "eliverlara@gmail.com",
-				"Name": "EliverLara"
+				"Name": "b3l0wz3r0"
 			}
 		],
 		"Category": "Application Launchers",
-		"Description": "A modern Launcher for plasma!",
-		"Description[el]": "\u039c\u03bf\u03bd\u03c4\u03ad\u03c1\u03bd\u03bf\u03c2 \u0395\u03ba\u03ba\u03b9\u03bd\u03b7\u03c4\u03ae\u03c2 plasma",
+		"Description": "Andromeda Launcher Lite \u2014 b3l0wz3r0 fork",
+		"Description[el]": "Andromeda Launcher \u2014 fork b3l0wz3r0",
 		"Description[fi]": "Moderni k\u00e4ynnistin Plasman ty\u00f6p\u00f6yd\u00e4lle!",
 		"Description[pl]": "Nowoczesne menu program\u00f3w dla Plasmy!",
 		"EnabledByDefault": true,
@@ -20,7 +19,7 @@
 		"Name[fi]": "Andromeda-k\u00e4ynnistin",
 		"Name[pl]": "Andromeda Launcher",
 		"Version": "0.7.2",
-		"Website": "https://github.com/EliverLara/AndromedaLauncher"
+		"Website": "https://github.com/Below-Z3R0/b3l0wz3r0-andromeda-launcher-lite"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
 	"X-Plasma-Provides": [
